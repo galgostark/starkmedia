@@ -1,19 +1,73 @@
 @import "tailwindcss";
 
-/* Custom scrollbar for dark theme feel */
+@plugin "tailwindcss-animate";
+
+@theme {
+  --font-sans: "Space Grotesk", sans-serif;
+  --font-display: "Archivo", sans-serif;
+
+  --color-background: #18181B;
+  /* Zinc 950 */
+  --color-surface: #27272A;
+  /* Zinc 800 */
+  --color-primary: #22D3EE;
+  /* Cyan 400 */
+  --color-secondary: #2563EB;
+  /* Blue 600 */
+
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+/* Global Styles */
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: #D4D4D8;
+    /* Zinc 300 */
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    letter-spacing: -0.025em;
+    /* tracking-tight */
+    color: white;
+  }
+}
+
+/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #0f172a;
+  background: var(--color-background);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #334155;
+  background: #3F3F46;
+  /* Zinc 700 */
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #475569;
+  background: #52525B;
+  /* Zinc 600 */
 }

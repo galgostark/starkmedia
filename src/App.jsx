@@ -9,7 +9,7 @@ import { LanguageProvider } from './context/LanguageContext';
 function App() {
   return (
     <LanguageProvider>
-      <div className="bg-slate-900 min-h-screen text-slate-200 font-sans selection:bg-cyan-500 selection:text-slate-900">
+      <div className="bg-background min-h-screen text-slate-200 font-sans selection:bg-primary selection:text-background">
         <Navbar />
         <Hero />
         <Features />
